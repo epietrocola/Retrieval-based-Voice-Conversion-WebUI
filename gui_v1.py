@@ -521,6 +521,7 @@ if __name__ == "__main__":
                 ],
                 [
                     sg.Button(i18n("开始音频转换"), key="start_vc"),
+                
                     sg.Button(i18n("停止音频转换"), key="stop_vc"),
                     sg.Radio(
                         i18n("输入监听"),
@@ -543,6 +544,9 @@ if __name__ == "__main__":
                 ],
             ]
             self.window = sg.Window("RVC - GUI", layout=layout, finalize=True)
+
+            # Trigger the 'my_button' event programmatically
+            self.window.write_event_value('start_vc', '')
             self.event_handler()
 
         def event_handler(self):
